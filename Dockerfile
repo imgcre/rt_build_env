@@ -1,5 +1,4 @@
 FROM ubuntu
-ARG PROJECTS_DIR=/root/projects
 ARG DEST_DIR=/usr/lib/gcc
 ARG VERSION=gcc-arm-none-eabi-10-2020-q4-major
 ARG URL=https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
@@ -27,6 +26,3 @@ RUN apt-get update && \
     && \
     apt-get clean && \
     wget -nv --show-progress --progress=bar:force:noscroll -O- $URL | tar -xj
-    
-WORKDIR $PROJECTS_DIR
-VOLUME ${PROJECTS_DIR}
